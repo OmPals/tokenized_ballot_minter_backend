@@ -86,6 +86,10 @@ export class AppService {
     secret: string,
     receiverAddress: string,
   ) {
+    console.log(id);
+    console.log(secret);
+    console.log(receiverAddress);
+    
     const paymentOrder = this.paymentOrders[id];
     if (paymentOrder.secret !== secret) throw new Error('wrong Secret');
     const contractInstance = this.erc20ContractFactory.attach(
